@@ -13,7 +13,7 @@ public class TeamSelect extends JPanel {
 	public TeamSelect() {
 		setLayout(null); 
 		
-		
+		//
 		JLabel lblSelectYourTeam = new JLabel("Select Your Team!");
 		lblSelectYourTeam.setBounds(166, 6, 112, 16);
 		add(lblSelectYourTeam);
@@ -89,6 +89,7 @@ public class TeamSelect extends JPanel {
 		JButton btnPelicans = new JButton("Pelicans");
 		btnPelicans.setBounds(291, 212, 101, 22);
 		add(btnPelicans);
+		
 
 	}
 }
