@@ -42,11 +42,11 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 		// TODO Auto-generated method stub
 		JPanel newPanel = null;
 		
-		if(panelName.equals("FirstPanel")){
-			newPanel = new FirstPanel();
-		}/*else if(panelName.equals("SomeOtherPanel"){
-		}else if(panelName.equals("Some other other panel"{
-		}*/
+		if(panelName.equals("TeamSelect")){
+			newPanel = new TeamSelect();
+		}else if(panelName.equals("CreditsPanel")){
+			newPanel = new CreditsPanel();
+		}
 		
 		if(newPanel != null){
 			setContentPane(newPanel);
