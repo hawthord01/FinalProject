@@ -90,6 +90,9 @@ public class TeamSelect extends JPanel {
 		btnPelicans.setBounds(291, 212, 101, 22);
 		add(btnPelicans);
 		
+		JButton btnOther = new JButton("Other");
+		btnPelicans.setBounds(291, 241, 101, 22);
+		add(btnPelicans);
 
 	}
 }
