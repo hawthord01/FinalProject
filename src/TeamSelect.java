@@ -11,7 +11,8 @@ public class TeamSelect extends JPanel {
 	 * Create the panel.
 	 */
 	public TeamSelect() {
-		setLayout(null);
+		setLayout(null); 
+		
 		
 		JLabel lblSelectYourTeam = new JLabel("Select Your Team!");
 		lblSelectYourTeam.setBounds(166, 6, 112, 16);
