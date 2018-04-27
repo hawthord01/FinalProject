@@ -6,11 +6,14 @@ import java.awt.event.ActionEvent;
 
 public class CreditsPanel extends JPanel {
 
+	private PanelChangeListener listener;
+	
 	/**
 	 * Create the panel.
 	 */
-	public CreditsPanel() {
+	public CreditsPanel(PanelChangeListener listener) {
 		setLayout(null);
+		this.listener = listener;
 		
 		JLabel lblMadeBy = new JLabel("Made By");
 		lblMadeBy.setBounds(191, 51, 51, 16);
@@ -27,6 +30,7 @@ public class CreditsPanel extends JPanel {
 		JButton button = new JButton("< Go Back");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				listener.changePanel("CreditsPanel");
 			}
 		});
 		button.setBounds(158, 169, 117, 29);
