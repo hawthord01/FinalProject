@@ -1,12 +1,21 @@
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import javax.swing.JSeparator;
-import java.awt.event.ActionListener;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import com.sun.medialib.mlib.Image;
+import java.awt.Color;
 
 public class TeamSelect extends JPanel {
 
+	
+	private java.awt.Image backgroundImage;
 	/**
 	 * Create the panel.
 	 */
@@ -15,6 +24,7 @@ public class TeamSelect extends JPanel {
 		
 		//
 		JLabel lblSelectYourTeam = new JLabel("Select Your Team!");
+		lblSelectYourTeam.setForeground(Color.WHITE);
 		lblSelectYourTeam.setBounds(166, 6, 112, 16);
 		add(lblSelectYourTeam);
 		
@@ -28,10 +38,12 @@ public class TeamSelect extends JPanel {
 		add(btnNewButton);
 		
 		JLabel lblEasternConference = new JLabel("Eastern Conference");
+		lblEasternConference.setForeground(Color.WHITE);
 		lblEasternConference.setBounds(34, 36, 131, 16);
 		add(lblEasternConference);
 		
 		JLabel label = new JLabel("__________________");
+		label.setForeground(Color.WHITE);
 		label.setBounds(33, 36, 131, 16);
 		add(label);
 		
@@ -56,10 +68,12 @@ public class TeamSelect extends JPanel {
 		add(btnNewButton_5);
 		
 		JLabel lblWesternConference = new JLabel("Western Conference");
+		lblWesternConference.setForeground(Color.WHITE);
 		lblWesternConference.setBounds(281, 36, 150, 16);
 		add(lblWesternConference);
 		
 		JLabel lblNewLabel = new JLabel("__________________");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setBounds(281, 36, 131, 16);
 		add(lblNewLabel);
 		
@@ -88,12 +102,21 @@ public class TeamSelect extends JPanel {
 		add(btnNewButton_10);
 		
 		JButton btnPelicans = new JButton("Pelicans");
-		btnPelicans.setBounds(291, 212, 101, 22);
+		btnPelicans.setBounds(281, 212, 101, 22);
 		add(btnPelicans);
 		
 		JButton btnOther = new JButton("Other");
-		btnPelicans.setBounds(291, 241, 101, 22);
+		btnPelicans.setBounds(291, 211, 101, 22);
 		add(btnPelicans);
 
+		try{
+			backgroundImage = ImageIO.read(new File("TitleBG.jpg"));
+		}catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+		public void paintComponent(Graphics g){
+			super.paintComponent(g);
+			g.drawImage(backgroundImage, 0, 0, this);
 	}
 }
