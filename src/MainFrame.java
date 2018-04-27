@@ -44,17 +44,23 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 		
 		if(panelName.equals("TeamSelect")){
 			newPanel = new TeamSelect();
+
 		}else if(panelName.equals("CreditsPanel")){
 			newPanel = new CreditsPanel(this);
 		}else if(panelName.equals("TitlePanel")){
 			newPanel = new TitlePanel(this);
-		}
+
+
+		}/*else if(panelName.equals("SomeOtherPanel"){
+		}else if(panelName.equals("Some other other panel"{
+		}*/
+		
 		
 		
 		if(newPanel != null){
 			setContentPane(newPanel);
 			validate();
 		}
-	}
 
+	}	
 }

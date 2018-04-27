@@ -11,8 +11,9 @@ public class TeamSelect extends JPanel {
 	 * Create the panel.
 	 */
 	public TeamSelect() {
-		setLayout(null);
+		setLayout(null); 
 		
+		//
 		JLabel lblSelectYourTeam = new JLabel("Select Your Team!");
 		lblSelectYourTeam.setBounds(166, 6, 112, 16);
 		add(lblSelectYourTeam);
@@ -59,8 +60,40 @@ public class TeamSelect extends JPanel {
 		add(lblWesternConference);
 		
 		JLabel lblNewLabel = new JLabel("__________________");
-		lblNewLabel.setBounds(269, 34, 61, 16);
+		lblNewLabel.setBounds(281, 36, 131, 16);
 		add(lblNewLabel);
+		
+		JButton btnNewButton_6 = new JButton("Huston");
+		btnNewButton_6.setBounds(291, 64, 101, 22);
+		add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("Golden State");
+		btnNewButton_7.setBounds(291, 94, 101, 22);
+		add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("Trail Blazers");
+		btnNewButton_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_8.setBounds(291, 124, 101, 22);
+		add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("Thunder");
+		btnNewButton_9.setBounds(291, 152, 101, 22);
+		add(btnNewButton_9);
+		
+		JButton btnNewButton_10 = new JButton("Jazz");
+		btnNewButton_10.setBounds(291, 183, 101, 22);
+		add(btnNewButton_10);
+		
+		JButton btnPelicans = new JButton("Pelicans");
+		btnPelicans.setBounds(291, 212, 101, 22);
+		add(btnPelicans);
+		
+		JButton btnOther = new JButton("Other");
+		btnPelicans.setBounds(291, 241, 101, 22);
+		add(btnPelicans);
 
 	}
 }
