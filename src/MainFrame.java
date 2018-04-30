@@ -30,7 +30,7 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 	 */
 	public MainFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 600);
+		setBounds(100, 100, 900, 505);
 		contentPane = new TitlePanel(this);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -43,13 +43,13 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 		JPanel newPanel = null;
 		
 		if(panelName.equals("TeamSelect")){
-			newPanel = new TeamSelect();
-
+			newPanel = new TeamSelect(this);
 		}else if(panelName.equals("CreditsPanel")){
 			newPanel = new CreditsPanel(this);
 		}else if(panelName.equals("TitlePanel")){
 			newPanel = new TitlePanel(this);
-
+		}else if(panelName.equals("FirstPanel")){
+				newPanel = new FirstPanel();
 
 		}/*else if(panelName.equals("SomeOtherPanel"){
 		}else if(panelName.equals("Some other other panel"{
