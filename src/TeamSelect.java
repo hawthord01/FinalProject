@@ -31,6 +31,7 @@ public class TeamSelect extends JPanel {
 		this.listener = listener;
 		
 		//
+		
 		List<JButton> buttons = new ArrayList<>();
 		JLabel label = new JLabel("Select a team");
 		label.setBounds(350, 0, 300, 100);
