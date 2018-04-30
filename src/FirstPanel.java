@@ -36,43 +36,8 @@ public class FirstPanel extends JPanel {
 		getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_DOWN, 0), "moveDown");
 		getActionMap().put("moveDown", new MoveAction(DOWN));
 		
-		Timer timer = new Timer(100, new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int dx, dy;
-				switch(currentDirection){
-				case UP:
-					dx = 0;
-					dy = -10;
-					break;
-				case DOWN:
-					dx = 0;
-					dy = 10;
-					break;
-				case RIGHT:
-					dx = 10;
-					dy = 0;
-					break;
-				case LEFT:
-					dx = -10;
-					dy = 0;
-					break;
-				default:
-					dx = 0;
-					dy = 0;
-				}
-				ulx += dx;
-				uly += dy;
-				repaint();
-				
-				
-			}
-			
-		});
-		timer.start();
-		
 	}
+		
 	
 	public void paint(Graphics g) {
 		super.paint(g);

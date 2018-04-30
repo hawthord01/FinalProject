@@ -24,11 +24,6 @@ public class TitlePanel extends JPanel {
 		this.listener = listener;
 		
 		JButton btnNewButton = new JButton("Start Game");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				listener.changePanel("TeamSelect");
-			}
-		});
 		btnNewButton.setBounds(155, 152, 117, 29);
 		add(btnNewButton);
 		
