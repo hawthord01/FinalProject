@@ -3,8 +3,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,101 +16,44 @@ import com.sun.medialib.mlib.Image;
 import java.awt.Color;
 
 public class TeamSelect extends JPanel {
-
 	
+
+	private PanelChangeListener listener;
 	private java.awt.Image backgroundImage;
 	/**
 	 * Create the panel.
 	 */
-	public TeamSelect() {
+	String[][] teams = {{"Raptors", "Celtics", "76ers", "Cavs", "Pacers", "Heat", "Bucks", "Wizards"},
+			{"Rockets", "Warriors", "TrailBlazers", "Thunder", "Jazz", "Pelicans", "Spurs", "Wolves"}};
+	
+	public TeamSelect(PanelChangeListener listener) {
 		setLayout(null); 
+		this.listener = listener;
 		
 		//
-		JLabel lblSelectYourTeam = new JLabel("Select Your Team!");
-		lblSelectYourTeam.setForeground(Color.WHITE);
-		lblSelectYourTeam.setBounds(166, 6, 112, 16);
-		add(lblSelectYourTeam);
 		
-		JButton btnNewButton = new JButton("Raptors");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnNewButton.setBounds(44, 64, 101, 22);
-		add(btnNewButton);
-		
-		JLabel lblEasternConference = new JLabel("Eastern Conference");
-		lblEasternConference.setForeground(Color.WHITE);
-		lblEasternConference.setBounds(34, 36, 131, 16);
-		add(lblEasternConference);
-		
-		JLabel label = new JLabel("__________________");
+		List<JButton> buttons = new ArrayList<>();
+		JLabel label = new JLabel("Select a team");
+		label.setBounds(350, 0, 300, 100);
 		label.setForeground(Color.WHITE);
-		label.setBounds(33, 36, 131, 16);
 		add(label);
-		
-		JButton btnNewButton_1 = new JButton("Celtics");
-		btnNewButton_1.setBounds(44, 94, 101, 22);
-		add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("76ers");
-		btnNewButton_2.setBounds(44, 124, 101, 22);
-		add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Cavaliers");
-		btnNewButton_3.setBounds(44, 155, 101, 22);
-		add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("Pacers");
-		btnNewButton_4.setBounds(44, 183, 101, 22);
-		add(btnNewButton_4);
-		
-		JButton btnNewButton_5 = new JButton("Miami");
-		btnNewButton_5.setBounds(44, 212, 101, 22);
-		add(btnNewButton_5);
-		
-		JLabel lblWesternConference = new JLabel("Western Conference");
-		lblWesternConference.setForeground(Color.WHITE);
-		lblWesternConference.setBounds(281, 36, 150, 16);
-		add(lblWesternConference);
-		
-		JLabel lblNewLabel = new JLabel("__________________");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(281, 36, 131, 16);
-		add(lblNewLabel);
-		
-		JButton btnNewButton_6 = new JButton("Huston");
-		btnNewButton_6.setBounds(291, 64, 101, 22);
-		add(btnNewButton_6);
-		
-		JButton btnNewButton_7 = new JButton("Golden State");
-		btnNewButton_7.setBounds(291, 94, 101, 22);
-		add(btnNewButton_7);
-		
-		JButton btnNewButton_8 = new JButton("Trail Blazers");
-		btnNewButton_8.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		for(int r = 0; r < teams.length; r++){
+			for(int c = 0; c < teams[0].length; c++){
+				int x = 250 + 300 * r;
+				int y = 120 + 35 * c;
+				JButton current = new JButton(teams[r][c]);
+				current.setBounds(x, y, 100, 25);
+				current.addActionListener(new AbstractAction(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						label.setText("You selected the team: " + e.getActionCommand() );	
+					}
+					
+				});
+				add(current);
 			}
-		});
-		btnNewButton_8.setBounds(291, 124, 101, 22);
-		add(btnNewButton_8);
-		
-		JButton btnNewButton_9 = new JButton("Thunder");
-		btnNewButton_9.setBounds(291, 152, 101, 22);
-		add(btnNewButton_9);
-		
-		JButton btnNewButton_10 = new JButton("Jazz");
-		btnNewButton_10.setBounds(291, 183, 101, 22);
-		add(btnNewButton_10);
-		
-		JButton btnPelicans = new JButton("Pelicans");
-		btnPelicans.setBounds(281, 212, 101, 22);
-		add(btnPelicans);
-		
-		JButton btnOther = new JButton("Other");
-		btnPelicans.setBounds(291, 211, 101, 22);
-		add(btnPelicans);
+		}
 
 		try{
 			backgroundImage = ImageIO.read(new File("TitleBG.jpg"));
