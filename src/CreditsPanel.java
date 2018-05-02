@@ -30,7 +30,7 @@ public class CreditsPanel extends JPanel {
 		JButton button = new JButton("< Go Back");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				listener.changePanel("CreditsPanel");
+				listener.changePanel("TitlePanel");
 			}
 		});
 		button.setBounds(158, 169, 117, 29);

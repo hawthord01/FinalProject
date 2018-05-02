@@ -25,6 +25,16 @@ public class TitlePanel extends JPanel {
 		
 		JButton btnNewButton = new JButton("Start Game");
 		btnNewButton.setBounds(155, 152, 117, 29);
+		btnNewButton.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.changePanel("TeamSelect");
+				
+			}
+			
+		});
+				
 		add(btnNewButton);
 		
 		JLabel lblMazeGame = new JLabel("NBA Playoff Maze");
