@@ -37,6 +37,19 @@ public class TeamSelect extends JPanel {
 		label.setBounds(350, 0, 300, 100);
 		label.setForeground(Color.WHITE);
 		add(label);
+		
+		JButton btnGoBack = new JButton("Back to main screen");
+		btnGoBack.setBounds(365, 414, 170, 29);
+		btnGoBack.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.changePanel("TitlePanel");				
+			}
+			
+		}
+				);
+		add(btnGoBack);
 		for(int r = 0; r < teams.length; r++){
 			for(int c = 0; c < teams[0].length; c++){
 				int x = 250 + 300 * r;
