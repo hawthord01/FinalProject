@@ -7,6 +7,7 @@ import javax.swing.border.EmptyBorder;
 
 public class MainFrame extends JFrame implements PanelChangeListener{
 
+	private PanelChangeListener listener;
 	private JPanel contentPane;
 
 	/**
@@ -32,7 +33,7 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 520);
 
-		contentPane = new TitlePanel(this);
+		contentPane = new FirstPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
