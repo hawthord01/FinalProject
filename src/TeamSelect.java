@@ -38,6 +38,19 @@ public class TeamSelect extends JPanel {
 		label.setForeground(Color.WHITE);
 		add(label);
 		
+		JButton btnForth = new JButton("Next");
+		btnForth.setBounds(365, 314, 170, 29);
+		btnForth.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				listener.changePanel("FirstLevelConstruction");				
+			}
+			
+		}
+				);
+		add(btnForth);
+		
 		JButton btnGoBack = new JButton("Back to main screen");
 		btnGoBack.setBounds(365, 414, 170, 29);
 		btnGoBack.addActionListener(new ActionListener(){
@@ -61,6 +74,7 @@ public class TeamSelect extends JPanel {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						label.setText("You selected the team: " + e.getActionCommand() );	
+						listener.changePanel("FirstLevelContruction");	
 					}
 					
 				});

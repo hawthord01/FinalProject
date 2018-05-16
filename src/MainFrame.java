@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 
 public class MainFrame extends JFrame implements PanelChangeListener{
 
-	private PanelChangeListener listener;
 	private JPanel contentPane;
 
 	/**
@@ -33,7 +32,7 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 520);
 
-		contentPane = new FirstPanel();
+		contentPane = new TitlePanel (this);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -50,10 +49,13 @@ public class MainFrame extends JFrame implements PanelChangeListener{
 			newPanel = new CreditsPanel(this);
 		}else if(panelName.equals("TitlePanel")){
 			newPanel = new TitlePanel(this);
-		}else if(panelName.equals("FirstPanel")){
-			newPanel = new FirstPanel();
-		}else if(panelName.equals("FirstLevel")){
-			newPanel = new FirstLevel(this);
+		}else if(panelName.equals("LevelTwo")){
+			newPanel = new LevelTwo(this);
+		}else if(panelName.equals("FirstLevelConstruction")){
+			newPanel = new FirstLevelConstruction(this);
+		}else if(panelName.equals("FirstLevell")){
+			newPanel = new FirstLevell(this);
+		
 
 		}/*else if(panelName.equals("SomeOtherPanel"){
 		}else if(panelName.equals("Some other other panel"{

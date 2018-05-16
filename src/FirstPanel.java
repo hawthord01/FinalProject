@@ -11,6 +11,7 @@ import javax.swing.KeyStroke;
 
 public class FirstPanel extends JPanel {
 
+	private PanelChangeListener listener;
 	private int ulx = 40, uly = 420;
 	private int currentDirection = 1;
 	private final int SIDE_LENGTH = 40, UP = 0, RIGHT = 1, DOWN = 2, LEFT= 3;
@@ -27,10 +28,14 @@ public class FirstPanel extends JPanel {
 	private Rectangle r5 = new Rectangle(0, 460, 900, 40);
 	private Rectangle r6 = new Rectangle(860, 0, 40, 460);
 	
+	//Winning Area
+	private Rectangle win = new Rectangle(860, 40, 40, 40);
+	
 	/**
 	 * Create the panel.
 	 */
-	public FirstPanel() {
+	public FirstPanel(PanelChangeListener listener) {
+		this.listener = listener;
 		this.setBackground(Color.WHITE);
 		
 		//Left
@@ -72,7 +77,8 @@ public class FirstPanel extends JPanel {
 		
 		//random
 		g.fillRect(100, 0, 40, 420);
-		
+		g.setColor(Color.RED);
+		g.fillRect(0, 0, 900, 40);
 	}
 	
 	
@@ -99,6 +105,9 @@ public class FirstPanel extends JPanel {
 					repaint();
 					System.out.println("intersect");
 					player.setBounds(ulx, uly, SIDE_LENGTH, SIDE_LENGTH);
+				}
+				if(player.intersects(win)){
+					System.out.println("Win");
 				}
 		}
 		
